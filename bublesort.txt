@@ -1,0 +1,140 @@
+load 0
+addi 10
+store 61  // carrega o valor 10 na posição 1 do vetor
+load 0
+addi 8
+store 62  // carrega o valor 8  na posição 2 do vetor
+load 0
+addi 15
+store 63  // carrega o valor 15  na posição 3 do vetor
+load 0
+addi 4
+store 64  // carrega o valor 4  na posição 4 do vetor
+load 0
+addi 1
+store 65  // carrega o valor 1  na posição 5 do vetor
+load 0
+addi 1
+store 96  
+load 0
+addi 1
+store 100
+load 0
+addi 5
+store 101
+load 100   // inicio do for externo
+    subi 4
+    jpos 'fim_for_externo'                                                             
+    load 96
+    store 97
+    load 97 'inicio_for_interno'                                                        
+        addi 1
+        store 97
+        sub 101    //inicia com valor 5 e vai decrementando                                 
+        jpos 117 'fim_for_interno'                                                      
+        load 96                                                                         
+        subi 1                                                                          
+            jpos 'primeiro_if_caso_2' 
+            load 61
+            jump 'fim_primeiro_if'
+        subi 1  'primeiro_if_caso_2'                                                    
+            jpos 'primeiro_if_caso_3'                                                  
+            load 62
+            jump  'fim_primeiro_if'                                                     
+        subi 1 'primeiro_if_caso_3'                                                    
+            jpos 'primeiro_if_caso_4'                                               
+            load 63
+            jump  'fim_primeiro_if'                                                     
+        subi 1 'primeiro_if_caso_4'                                                     
+            jpos 'ultimo_elemento_i'                                                 
+            load 64
+            jump 'fim_primeiro_if'                                                     
+            load 65 'ultimo_elemento_i'
+        store 98 'fim_primeiro_if'                                                        
+
+        load 97                                                                         
+        subi 1                                                                           
+            jpos 'segundo_if_caso_2'                                                
+            load 61
+            jump 'fim_segundo_if'                                                                        
+        subi 1 'segundo_if_caso_2'                                                      
+            jpos 'segundo_if_caso_3'                                                    
+            load 62
+            jump  'fim_segundo_if'                                                                   
+        subi 1 'segundo_if_caso_3'                                                      
+            jpos 'segundo_if_caso_4'                                                 
+            load 63
+            jump  'fim_segundo_if'                                                     
+        subi 1 'segundo_if_caso_4'                                                       
+            jpos 'ultimo_elemento_j'                                                 
+            load 64
+            jump  'fim_segundo_if'                                                   
+            load 65 'ultimo_elemento_j'
+        store 99 'fim_segundo_if'                                                      
+
+        load 99                                                                         
+        sub 98                                                                          
+
+        jpos  'fim_quarto_if'                                                 
+            load 96                                                                     
+            subi 1                                                                      
+                jpos 'terceiro_if_caso_2'                                            
+                load 99
+                store 61
+                jump  'fim_terceiro_if'                                                                     
+            subi 1 'terceiro_if_caso_2'                                                     
+                jpos 'terceiro_if_caso_3'                                            
+                load 99
+                store 62
+                jump  'fim_terceiro_if'                                              
+            subi 1 'terceiro_if_caso_3'                                                 
+                jpos 'terceiro_if_caso_4'                                            
+                load 99
+                store 63
+                jump  'fim_terceiro_if'                                                 
+            subi 1 'terceiro_if_caso_4'                                                 
+                jpos 'ultimo_elemento_1'                                                 
+                load 99
+                store 64
+                jump  'fim_terceiro_if'                                                               
+                load 99 'ultimo_elemento_1'
+                store 65
+
+            load 97 'fim_terceiro_if'                                                                  
+            subi 1                                                                          
+                jpos 'quarto_if_caso_2'                                                
+                load 98
+                store 61
+                jump 'fim_quarto_if'                                                                   
+            subi 1 'quarto_if_caso_2'                                                       
+                jpos 'quarto_if_caso_3'                                                
+                load 98
+                store 62
+                jump 'fim_quarto_if'                                                                  
+            subi 1 'quarto_if_caso_3'                                                        
+                jpos 'quarto_if_caso_4'                                                 
+                load 98
+                store 63
+                jump 'fim_quarto_if'                                                   
+            subi 1 'quarto_if_caso_4'                                                       
+                jpos 'ultimo_elemento_2'                                                 
+                load 98
+                store 64
+                jump  'fim_quarto_if'                                                
+                load 98 'ultimo_elemento_2'
+                store 65
+    load 96 'fim_quarto_if'
+    addi 1
+    store 96
+    jump 24  'inicio_for_interno'                                                                                  
+    load 100 'fim_for_interno'                                                                                     
+    addi 1
+    store 100
+    load 101
+    subi 1
+    store 101
+    load 0
+    addi 1
+    store 96
+    jump 19  'inicio_for_externo'                                                                              
+    'fim_for_externo'                                                                                    
