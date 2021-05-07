@@ -31,7 +31,7 @@ load 100   // inicio do for externo
         addi 1
         store 97
         sub 101    //inicia com valor 5 e vai decrementando                                 
-        jpos 117 'fim_for_interno'                                                      
+        jpos 'fim_for_interno'                                                      
         load 96                                                                         
         subi 1                                                                          
             jpos 'primeiro_if_caso_2' 
@@ -126,7 +126,7 @@ load 100   // inicio do for externo
     load 96 'fim_quarto_if'
     addi 1
     store 96
-    jump 24  'inicio_for_interno'                                                                                  
+    jump 'inicio_for_interno'                                                                                  
     load 100 'fim_for_interno'                                                                                     
     addi 1
     store 100
@@ -136,5 +136,5 @@ load 100   // inicio do for externo
     load 0
     addi 1
     store 96
-    jump 19  'inicio_for_externo'                                                                              
+    jump  'inicio_for_externo'                                                                              
     'fim_for_externo'                                                                                    
