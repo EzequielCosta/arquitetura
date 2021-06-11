@@ -20,3 +20,18 @@ b:      .fill   12
 c:      .fill   30
 
 
+-----------------ATIVIDADE------------------
+
+1) Implementar utilizando a Arquitetura RISC (Usando no Simulador):
+Leia A 
+Leia B 
+Leia C 
+Enquanto A+B < C faça 
+    A = A + 1 
+    B = B + 2 
+    C = C – 1 
+Fim enquanto 
+
+
+2) Considerando, em um teste, os seguintes valores iniciais, exiba os valores finais: 
+A = 10 B = 12 C = 30
