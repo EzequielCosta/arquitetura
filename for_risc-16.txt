@@ -1,0 +1,22 @@
+        lw  1,0,a # a = 10
+        lw  2,0,b # b = 12
+        lw  3,0,c # c = 30
+        lui 4,512 #1000000000000000
+        lui 5,511
+        addi 5,5,63 #01111111111111111 ( < 0 )
+start:  add 6,1,2  # aux = a + b
+        nand 7,3,3 #transformar o 'c' em negativo
+        addi 7,7,1 #transformar o 'c' em negativo
+        add 6,6,7  # aux = (a+b) - c
+        nand 6,6,4
+        beq 6,5,else
+done:   halt
+else:   addi 1,1,1
+        addi 2,2,2
+        addi 3,3,-1
+        beq 0,0,start
+a:      .fill   10
+b:      .fill   12
+c:      .fill   30
+
+
